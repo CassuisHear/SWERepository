@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改用户</title>
+</head>
+<body>
+<div>
+    <table id="dataTable" border="1" cellspacing="0" cellpadding="0" style="width:100% ;height:100%">
+        <tr>
+            <th colspan="5">用户信息表</th>
+        </tr>
+        <tr>
+            <th>id</th>
+            <th>用户名</th>
+            <th>用户密码</th>
+            <th>操作</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <form th:action="@{/userAlter}" method="post">
+                <input type="hidden" name="_method" value="put"/>
+                <input type="hidden" name="id" th:value="${user.id}"/>
+                <td>用户名:<input type="text" name="username" th:value="${user.username}"/></td>
+                <td>密码:<input type="text" name="password" th:value="${user.password}"/></td>
+                <td>银行卡账号:<input type="text" name="account" th:value="${user.account}"/></td>
+                <td><input type="submit" name="update"/><br/></td>
+            </form>
+        </tr>
+    </table>
+</div>
+<div>
+    <a th:href="@{/manager}">返回管理页面</a>
+</div>
+</body>
+</html>

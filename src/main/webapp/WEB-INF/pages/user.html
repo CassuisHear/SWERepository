@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--suppress ThymeleafVariablesResolveInspection -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户界面</title>
+    <link type="text/css" rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<div>
+    <h3>用户信息展示</h3>
+</div>
+<div>
+    <table th:id="userTable" border="1" cellspacing="0" cellpadding="0" style="width:100% ;height:100%">
+        <tr>
+            <td th:text="用户名"></td>
+            <td th:text="银行卡号"></td>
+        </tr>
+        <tr>
+            <td th:text="${userInfo.username}"></td>
+            <td th:text="${userInfo.account}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

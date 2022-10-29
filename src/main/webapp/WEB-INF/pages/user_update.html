@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户新增界面</title>
+</head>
+<body>
+<div>
+    <form th:action="@{/user}" method="post" style="width:100% ;height:100%">
+        <input type="hidden" name="_method" value="put"/>
+        <input type="hidden" name="id" th:value="${user.id}"/>
+        用户名:<input type="text" name="username" th:value="${user.username}" readonly unselectable="on"/><br/>
+        密码:<input type="text" name="password" th:value="${user.password}" readonly unselectable="on"/><br/>
+        银行卡账号:<input type="text" name="account" value="请填入16位账号"/><br/>
+        <input type="submit" name="update"/><br/>
+    </form>
+</div>
+</body>
+</html>
